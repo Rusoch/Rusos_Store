@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "Products" (
+CREATE TABLE "Product" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "name" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
@@ -15,8 +15,8 @@ CREATE TABLE "Products" (
     "banner" TEXT,
     "createdAt" TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    CONSTRAINT "Products_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "Product_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "product_slug_idx" ON "Products"("slug");
+CREATE UNIQUE INDEX "product_slug_idx" ON "Product"("slug");

@@ -1,14 +1,14 @@
-'use server'
-import { LATEST_PRODUCTS_LIMIT } from "../constants";
+"use server";
+import { prisma } from "@/db/prisma";
 import { convertToPlainObject } from "../utils";
-import { PrismaClient } from "@prisma/client"
+import { LATEST_PRODUCTS_LIMIT } from "../constants";
 
-//get latest products 
-export async function getLatestProducts(){
-    const prisma = new PrismaClient();
-    const data = await prisma.products.findMany({
-        take: LATEST_PRODUCTS_LIMIT,
-        orderBy: {createdAt: 'desc'},
-    })
-    return convertToPlainObject(data);
-};
+// Get latest products
+export async function getLatestProducts() {
+	const data = await prisma.product.findMany({
+		take: LATEST_PRODUCTS_LIMIT,
+		orderBy: { createdAt: "desc" },
+	});
+
+	return convertToPlainObject(data);
+}
