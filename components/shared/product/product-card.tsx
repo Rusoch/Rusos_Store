@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import ProductPrice from "./product-price";
-const productCard = ({ product }: { product: any }) => {
+import { Products } from "@/types";
+const productCard = ({ product }: { product: Products }) => {
 	return (
 		<Card className="w-full max-w-sm">
 			<CardHeader className="p-0 items-center">
@@ -18,7 +19,7 @@ const productCard = ({ product }: { product: any }) => {
 			</CardHeader>
 			<CardContent className="p-4 grid gap-4 ">
 				<div className="text-xs">{product.brand}</div>
-                <Link href={`/product/${product.slag}`}>
+                <Link href={`/product/${product.slug}`}>
                 <h2 className="text-sm font-medium">{product.name}</h2>
                 </Link>
                 <div className="flex-between gap-4">
