@@ -5,7 +5,7 @@
 
   //sign in the user with credentials
 
-  export async function signInWithCredentials(prevstate:unknown, formData formData:) {
+  export async function signInWithCredentials(prevState: unknown, formData: FormData) {
     try{
         const user = signInFormSchema.parse({
             email: formData.get('email'),
