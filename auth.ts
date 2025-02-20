@@ -6,8 +6,8 @@ import { compareSync } from "bcrypt-ts-edge";
 import type { NextAuthConfig } from "next-auth";
 export const config = {
 	pages: {
-		signIn: "/signin",
-		error: "/signin",
+		signIn: "/sign-in",
+		error: "/sign-in",
 	},
 	session: {
 		strategy: "jwt",
@@ -45,7 +45,7 @@ export const config = {
 					}
 					//    if user does not exist or password does not match return null
 				}
-			},
+			}, 
 		}),
 	],
 	callbacks: {
@@ -59,5 +59,5 @@ export const config = {
 			return session;
 		},
 	},
-} satisfies.NextAuthConfig;
+} satisfies NextAuthConfig;
 export const { handlers, auth, signIn, signOut } = NextAuth(config);
