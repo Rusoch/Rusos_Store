@@ -1,8 +1,15 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card";
 import { APP_NAME } from "@/lib/constants";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import CredentialsSignInForm from "./credentials-signin-form";
 export const metadata: Metadata = {
 	title: "Sign In",
 };
@@ -18,16 +25,17 @@ const SignInPage = () => {
 							width={100}
 							height={100}
 							alt={`${APP_NAME} logo`}
-                            priority
+							priority
 						/>
 					</Link>
-                    <CardTitle className="text-center">Sign In</CardTitle>
-                    <CardDescription className="text-center">Sign in to your account</CardDescription>
-
+					<CardTitle className="text-center">Sign In</CardTitle>
+					<CardDescription className="text-center">
+						Sign in to your account
+					</CardDescription>
 				</CardHeader>
-                <CardContent className="space-y-4">
-
-                </CardContent>
+				<CardContent className="space-y-4">
+					<CredentialsSignInForm></CredentialsSignInForm>
+				</CardContent>
 			</Card>
 		</div>
 	);
