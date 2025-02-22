@@ -28,7 +28,7 @@ export function formatError(error: any) {
 		return fieldErrors.join(". ");
 	} else if (
 		error.name === "PrismaClientKnownRequestError" &&
-		error.code === "P2002"
+		error.code === "P2002" 
 	) {
 		//handle Prisma error
 		const field = error.meta?.target ? error.meta.target[0] : "Field";
