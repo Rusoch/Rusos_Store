@@ -11,6 +11,7 @@ const AddToCart = ({ item }: { item: CartItem }) => {
 		const res = await addItemToCart(item);
 		if (!res.success) {
 			toast.error(res.message, {
+                dismissible: true,
 				style: {
 					background: "red",
 				},
@@ -18,11 +19,12 @@ const AddToCart = ({ item }: { item: CartItem }) => {
 			return;
 		}
 		//handle success add to cart
-		toast(`${item.name}- ${res.message}`, {
+		toast(`${item.name} - ${res.message}`, {
 			action: {
 				label: "Go To Cart",
 				onClick: () => router.push("/cart"),
 			},
+            dismissible: true,
 			//additional options here
 		});
 
@@ -31,7 +33,7 @@ const AddToCart = ({ item }: { item: CartItem }) => {
 
 	return (
 		<Button className="w-full" type="button" onClick={handleAddToCart}>
-			add to cart
+		<Plus/>	add to cart
 		</Button>
 	);
 };
