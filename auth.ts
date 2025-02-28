@@ -6,6 +6,11 @@ import { compareSync } from "bcrypt-ts-edge";
 import type { NextAuthConfig } from "next-auth";
 import { NextResponse } from "next/server";
   
+
+export const runtimeConfig = {
+	runtime: "nodejs",
+  };
+  
 export const config = {
 	pages: {
 		signIn: "/sign-in",
