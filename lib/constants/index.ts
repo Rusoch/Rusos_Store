@@ -18,3 +18,11 @@ export const APP_SERVER_URL =
 		password: '',
 		confirmPassword: ''
 	}
+	export const shippingAddressDefaultValues = {
+		fullName: '',
+		streetAddress: '',
+		city: '',
+		postalCode: '',
+		country: '',
+	  };
+	  
